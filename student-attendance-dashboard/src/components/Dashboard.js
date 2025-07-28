@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, History, User, Bell, QrCode } from 'lucide-react';
+import { Home, History, User, Bell, QrCode, Calendar, BarChart3, Settings } from 'lucide-react';
 import Header from './Header';
 import SessionList from './SessionList';
 import QRScanner from './QRScanner';
@@ -209,6 +209,38 @@ const Dashboard = ({ user, onLogout }) => {
     }
   };
 
+  const navigationItems = [
+    {
+      id: 'home',
+      label: 'Home',
+      icon: Home,
+      activeColor: 'text-blue-600',
+      inactiveColor: 'text-gray-500'
+    },
+    {
+      id: 'history',
+      label: 'History',
+      icon: BarChart3,
+      activeColor: 'text-blue-600',
+      inactiveColor: 'text-gray-500'
+    },
+    {
+      id: 'notifications',
+      label: 'Alerts',
+      icon: Bell,
+      activeColor: 'text-blue-600',
+      inactiveColor: 'text-gray-500',
+      badge: unreadNotifications
+    },
+    {
+      id: 'profile',
+      label: 'Profile',
+      icon: User,
+      activeColor: 'text-blue-600',
+      inactiveColor: 'text-gray-500'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -220,58 +252,66 @@ const Dashboard = ({ user, onLogout }) => {
 
       {/* Main Content */}
       <main className="pb-20 safe-bottom">
-        {renderContent()}
+        <div className="container mx-auto max-w-7xl">
+          {renderContent()}
+        </div>
       </main>
 
       {/* Floating Action Button for QR Scanner */}
       {activeTab === 'home' && !showQRScanner && (
         <button
           onClick={() => setShowQRScanner(true)}
-          className="fab touch-manipulation"
+          className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 flex items-center justify-center z-40 touch-manipulation"
           aria-label="Scan QR Code"
         >
           <QrCode className="w-6 h-6" />
         </button>
       )}
 
-      {/* Mobile Navigation */}
-      <nav className="mobile-nav">
-        <button
-          onClick={() => setActiveTab('home')}
-          className={`mobile-nav-item ${activeTab === 'home' ? 'text-blue-600' : 'text-gray-500'}`}
-        >
-          <Home className="w-5 h-5 mb-1" />
-          <span className="text-xs">Home</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('history')}
-          className={`mobile-nav-item ${activeTab === 'history' ? 'text-blue-600' : 'text-gray-500'}`}
-        >
-          <History className="w-5 h-5 mb-1" />
-          <span className="text-xs">History</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('notifications')}
-          className={`mobile-nav-item relative ${activeTab === 'notifications' ? 'text-blue-600' : 'text-gray-500'}`}
-        >
-          <Bell className="w-5 h-5 mb-1" />
-          {unreadNotifications > 0 && (
-            <span className="absolute top-0 right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-              {unreadNotifications > 9 ? '9+' : unreadNotifications}
-            </span>
-          )}
-          <span className="text-xs">Alerts</span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('profile')}
-          className={`mobile-nav-item ${activeTab === 'profile' ? 'text-blue-600' : 'text-gray-500'}`}
-        >
-          <User className="w-5 h-5 mb-1" />
-          <span className="text-xs">Profile</span>
-        </button>
+      {/* Enhanced Mobile Bottom Navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-2 py-1 z-50 safe-bottom">
+        <div className="flex justify-around items-center max-w-lg mx-auto">
+          {navigationItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = activeTab === item.id;
+            
+            return (
+              <button
+                key={item.id}
+                onClick={() => setActiveTab(item.id)}
+                className={`
+                  flex flex-col items-center justify-center p-2 rounded-xl hover:bg-gray-50 
+                  transition-all duration-200 touch-manipulation relative
+                  ${isActive ? 'bg-blue-50' : ''}
+                `}
+                style={{ minHeight: '60px', minWidth: '60px' }}
+              >
+                <div className="relative">
+                  <Icon 
+                    className={`w-5 h-5 mb-1 transition-colors duration-200 ${
+                      isActive ? item.activeColor : item.inactiveColor
+                    }`} 
+                  />
+                  {item.badge && item.badge > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-medium">
+                      {item.badge > 9 ? '9+' : item.badge}
+                    </span>
+                  )}
+                </div>
+                <span 
+                  className={`text-xs font-medium transition-colors duration-200 ${
+                    isActive ? item.activeColor : item.inactiveColor
+                  }`}
+                >
+                  {item.label}
+                </span>
+                {isActive && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-blue-600 rounded-full"></div>
+                )}
+              </button>
+            );
+          })}
+        </div>
       </nav>
 
       {/* QR Scanner Modal */}
