@@ -1,0 +1,144 @@
+
+> student-attendance-dashboard@0.1.0 start
+> react-scripts start
+
+(node:3914) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:3914) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled with warnings.
+
+[eslint] 
+src/components/Dashboard.js
+  Line 1:27:  'useEffect' is defined but never used  no-unused-vars
+  Line 2:16:  'Calendar' is defined but never used   no-unused-vars
+
+src/components/QRScanner.js
+  Line 2:29:   'Smartphone' is defined but never used             no-unused-vars
+  Line 11:10:  'cameraActive' is assigned a value but never used  no-unused-vars
+  Line 12:9:   'videoRef' is assigned a value but never used      no-unused-vars
+  Line 82:11:  Expected a default case                            default-case
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Dashboard.js
+  Line 1:27:  'useEffect' is defined but never used  no-unused-vars
+  Line 2:16:  'Calendar' is defined but never used   no-unused-vars
+
+src/components/QRScanner.js
+  Line 2:29:   'Smartphone' is defined but never used             no-unused-vars
+  Line 11:10:  'cameraActive' is assigned a value but never used  no-unused-vars
+  Line 12:9:   'videoRef' is assigned a value but never used      no-unused-vars
+  Line 82:11:  Expected a default case                            default-case
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/Dashboard.js
+  Line 1:27:  'useEffect' is defined but never used  no-unused-vars
+  Line 2:16:  'Calendar' is defined but never used   no-unused-vars
+
+src/components/QRScanner.js
+  Line 2:29:   'Smartphone' is defined but never used             no-unused-vars
+  Line 11:10:  'cameraActive' is assigned a value but never used  no-unused-vars
+  Line 12:9:   'videoRef' is assigned a value but never used      no-unused-vars
+  Line 82:11:  Expected a default case                            default-case
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/Dashboard.js
+  Line 1:27:  'useEffect' is defined but never used  no-unused-vars
+  Line 2:16:  'Calendar' is defined but never used   no-unused-vars
+
+src/components/QRScanner.js
+  Line 2:29:   'Smartphone' is defined but never used             no-unused-vars
+  Line 11:10:  'cameraActive' is assigned a value but never used  no-unused-vars
+  Line 12:9:   'videoRef' is assigned a value but never used      no-unused-vars
+  Line 82:11:  Expected a default case                            default-case
+
+webpack compiled with 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/QRScanner.js
+  Line 2:29:   'Smartphone' is defined but never used             no-unused-vars
+  Line 11:10:  'cameraActive' is assigned a value but never used  no-unused-vars
+  Line 12:9:   'videoRef' is assigned a value but never used      no-unused-vars
+  Line 82:11:  Expected a default case                            default-case
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/QRScanner.js
+  Line 2:29:   'Smartphone' is defined but never used             no-unused-vars
+  Line 11:10:  'cameraActive' is assigned a value but never used  no-unused-vars
+  Line 12:9:   'videoRef' is assigned a value but never used      no-unused-vars
+  Line 82:11:  Expected a default case                            default-case
+
+webpack compiled with 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/QRScanner.js
+  Line 12:20:  'useRef' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/components/QRScanner.js
+  Line 11:10:  'cameraActive' is assigned a value but never used  no-unused-vars
+  Line 12:9:   'videoRef' is assigned a value but never used      no-unused-vars
+  Line 82:11:  Expected a default case                            default-case
+
+ERROR in [eslint] 
+src/components/QRScanner.js
+  Line 12:20:  'useRef' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/components/QRScanner.js
+  Line 26:7:  'setCameraActive' is not defined  no-undef
+  Line 38:5:  'setCameraActive' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/components/QRScanner.js
+  Line 80:11:  Expected a default case  default-case
+
+ERROR in [eslint] 
+src/components/QRScanner.js
+  Line 26:7:  'setCameraActive' is not defined  no-undef
+  Line 38:5:  'setCameraActive' is not defined  no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/components/QRScanner.js
+  Line 72:11:  Expected a default case  default-case
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/components/QRScanner.js
+  Line 72:11:  Expected a default case  default-case
+
+webpack compiled with 1 warning
